@@ -21,7 +21,10 @@ This service addresses the common need for **automatic text summarization** in c
 
 The system is designed to handle **1000+ requests per day** with efficient caching and async processing.
 
-##  Architecture
+## link
+https://text-summarizer-backend-gen-ai-vbpf.onrender.com/docs#/default/get_result_result__task_id__get
+
+## Architecture
 
 ```
 ┌─────────────────┐    ┌──────────────────┐    ┌─────────────────┐
@@ -47,8 +50,8 @@ The system is designed to handle **1000+ requests per day** with efficient cachi
 ## Installation & Setup
 
 ### Prerequisites
-- Python 
-- Docker 
+- Python 3.9+
+- Docker (optional)
 - 4GB+ RAM (for AI model)
 
 ### Local Development
@@ -296,12 +299,12 @@ curl "http://localhost:8000/result/YOUR_TASK_ID"
 ```
 
 ### Test Cases:
--  Valid text summarization
--  Text too short (< 10 words)
--  Text too long (> 2000 chars)
--  Invalid task ID
--  Cache hit scenario
--  Background processing
+- ✅ Valid text summarization
+- ❌ Text too short (< 10 words)
+- ❌ Text too long (> 2000 chars)
+- ❌ Invalid task ID
+- ✅ Cache hit scenario
+- ✅ Background processing
 
 ## Future Enhancements
 
@@ -321,7 +324,7 @@ curl "http://localhost:8000/result/YOUR_TASK_ID"
 - **CDN Integration**: Global content delivery
 - **Auto-scaling**: Dynamic resource allocation
 
-##  Development
+## 🔧 Development
 
 ### Project Structure:
 ```
@@ -342,6 +345,7 @@ transformers>=4.35.0
 torch>=2.1.0
 pydantic>=2.5.0
 ```
+
 ## Assumptions & Design Decisions
 
 ### Assumptions:
@@ -366,5 +370,3 @@ pydantic>=2.5.0
 | **Concurrent Tasks** | Up to 4 |
 | **Memory Usage** | ~2-3GB (including model) |
 | **Model Load Time** | ~30 seconds (first run) |
- 
-
