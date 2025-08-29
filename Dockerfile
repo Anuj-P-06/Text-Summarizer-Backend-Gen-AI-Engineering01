@@ -1,27 +1,18 @@
-FROM python:3.10-slim
-
-# Prevents Python from writing .pyc and enables unbuffered output
-ENV PYTHONDONTWRITEBYTECODE=1 \
-    PYTHONUNBUFFERED=1 \
-    HF_HOME=/root/.cache/huggingface
+﻿FROM python:3.9-slim
 
 WORKDIR /app
 
-# System deps (git optional but often handy for HF)
-RUN apt-get update && apt-get install -y --no-install-recommends git \
-    && rm -rf /var/lib/apt/lists/*
+# Copy requirements first (better Docker caching)
+COPY requirements.txt .
 
-# Copy requirements first for better layer caching
-COPY requirements.txt /app/requirements.txt
+# Install dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy the rest of the project
-COPY . /app
+# Copy application code
+COPY . .
 
-# Pre-download the summarization model at build time (so containers start fast)
-RUN python -c "from transformers import pipeline; pipeline('summarization', model='sshleifer/distilbart-cnn-12-6')"
-
+# Expose port
 EXPOSE 8000
 
-# Default command for the API container (worker overrides this via docker-compose)
+# Run the application
 CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]

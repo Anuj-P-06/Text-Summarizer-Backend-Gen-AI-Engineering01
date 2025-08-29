@@ -2,7 +2,7 @@ import time
 from transformers import pipeline
 
 # Load HuggingFace summarizer model
-summarizer = pipeline("summarization", model="facebook/bart-large-cnn")
+summarizer = pipeline("summarization", model="sshleifer/distilbart-cnn-12-6")
 
 # In-memory task store
 tasks = {}   # {task_id: {"status": str, "result": str}}
