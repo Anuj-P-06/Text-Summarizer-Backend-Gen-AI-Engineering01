@@ -366,4 +366,5 @@ pydantic>=2.5.0
 | **Concurrent Tasks** | Up to 4 |
 | **Memory Usage** | ~2-3GB (including model) |
 | **Model Load Time** | ~30 seconds (first run) |#   T e x t - S u m m a r i z e r - B a c k e n d - G e n - A I - E n g i n e e r i n g 0 1  
+ #   T e x t - S u m m a r i z e r - B a c k e n d - G e n - A I - E n g i n e e r i n g 0 1  
  
