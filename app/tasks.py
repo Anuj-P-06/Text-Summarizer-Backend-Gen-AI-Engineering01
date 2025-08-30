@@ -13,7 +13,7 @@ cache = {}   # {input_text: summary}
 def summarize_text(text: str) -> str:
     """Run summarization using Hugging Face Inference API"""
     if HF_API_KEY is None:
-        raise RuntimeError("❌ HF_API_KEY not set in environment")
+        raise RuntimeError("HF_API_KEY not set in environment")
 
     headers = {"Authorization": f"Bearer {HF_API_KEY}"}
     response = requests.post(
