@@ -249,25 +249,15 @@ EXPOSE 8000
 CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
 ```
 
-## Deployment
-
-### Supported Platforms:
-- **Render**: Direct GitHub integration
-- **Fly.io**: Fast global deployment
-- **Railway**: Simple container deployment
-- **Heroku**: Classic PaaS option
-
 ### Environment Variables:
 ```bash
 PORT=8000
-WORKERS=4
 ```
 
 ## API Documentation
 
 Once running, visit:
 - **Interactive Docs**: `http://localhost:8000/docs`
-- **OpenAPI Schema**: `http://localhost:8000/openapi.json`
 
 ## Performance Considerations
 
@@ -276,11 +266,6 @@ Once running, visit:
 - **Background Workers**: CPU-intensive AI tasks offloaded
 - **Caching Layer**: Eliminates redundant computations
 - **Input Validation**: Prevents resource abuse
-
-### Load Handling:
-- **Concurrent Requests**: Up to 4 parallel AI processing tasks
-- **Memory Management**: Efficient model loading and caching
-- **Error Recovery**: Graceful failure handling
 
 ## Testing
 
@@ -339,11 +324,11 @@ fixit-assignment/
 
 ### Key Dependencies:
 ```
-fastapi>=0.104.0
-uvicorn>=0.24.0
-transformers>=4.35.0
-torch>=2.1.0
-pydantic>=2.5.0
+fastapi
+uvicorn
+transformers
+torch
+pydantic
 ```
 
 ## Assumptions & Design Decisions
@@ -370,6 +355,7 @@ pydantic>=2.5.0
 | **Concurrent Tasks** | Up to 4 |
 | **Memory Usage** | ~2-3GB (including model) |
 | **Model Load Time** | ~30 seconds (first run) |
+
 
 
 
