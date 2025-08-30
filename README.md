@@ -194,7 +194,7 @@ After processing:
 
 ## AI Model Details
 
-- **Model**: `facebook/bart-large-cnn`
+- **Model**: `sshleifer/distilbart-cnn-12-6`
 - **Type**: Sequence-to-sequence transformer
 - **Specialization**: Abstractive text summarization
 - **Parameters**: 
@@ -370,5 +370,6 @@ pydantic>=2.5.0
 | **Concurrent Tasks** | Up to 4 |
 | **Memory Usage** | ~2-3GB (including model) |
 | **Model Load Time** | ~30 seconds (first run) |
+
 
 
