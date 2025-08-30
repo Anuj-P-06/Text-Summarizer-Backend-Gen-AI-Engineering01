@@ -50,8 +50,8 @@ https://text-summarizer-backend-gen-ai-vbpf.onrender.com/docs
 ## Installation & Setup
 
 ### Prerequisites
-- Python 3.9+
-- Docker (optional)
+- Python
+- Docker
 - 4GB+ RAM (for AI model)
 
 ### Local Development
@@ -370,4 +370,5 @@ pydantic>=2.5.0
 | **Concurrent Tasks** | Up to 4 |
 | **Memory Usage** | ~2-3GB (including model) |
 | **Model Load Time** | ~30 seconds (first run) |
+
 
