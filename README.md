@@ -22,7 +22,7 @@ This service addresses the common need for **automatic text summarization** in c
 The system is designed to handle **1000+ requests per day** with efficient caching and async processing.
 
 ## link
-https://text-summarizer-backend-gen-ai-vbpf.onrender.com/docs#/default/get_result_result__task_id__get
+https://text-summarizer-backend-gen-ai-vbpf.onrender.com/docs
 
 ## Architecture
 
@@ -370,3 +370,4 @@ pydantic>=2.5.0
 | **Concurrent Tasks** | Up to 4 |
 | **Memory Usage** | ~2-3GB (including model) |
 | **Model Load Time** | ~30 seconds (first run) |
+
